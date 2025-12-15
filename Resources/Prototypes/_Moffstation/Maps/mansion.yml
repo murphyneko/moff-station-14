@@ -1,0 +1,20 @@
+- type: gameMap
+  id: Mansion
+  mapName: 'Mansion'
+  mapPath: /Maps/_Moffstation/mansion.yml
+  minPlayers: 15
+  maxPlayers: 50  # Moffstation - Playercount changes
+  stations:
+    Mansion:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Mansion {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+        - type: StationJobs
+          availableJobs:
+            Passenger: [ -1, -1 ] #infinite, not counted
